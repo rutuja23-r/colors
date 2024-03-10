@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.cd__main{
+   display: block !important;
+}
+body{
+    font-family: consolas;
+}
+
+.color-palette{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 270px;
+    box-shadow: 0 0 30px #0000002f;
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+.container{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    height: 25%;
+    cursor: pointer;
+}
+.color:hover .color-alt{
+    transform: scale(1);
+}
+.color-alt{
+    transform: scale(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00000050;
+    color: #fff;
+    height: 35px;
+    width: 100px;
+    border-radius: 15px 0 0 0;
+    overflow: hidden;
+}
+.copys{
+
+    position: relative;
+}
+.copys::before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "Copied";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+}
+.button-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-container > div{
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.buttons{
+    border: none;
+    outline: 0;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.buttons:hover{
+    transform: scale(1.02);
+}

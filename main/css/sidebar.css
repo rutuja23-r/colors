@@ -1,0 +1,194 @@
+#nav {
+    background-color: whitesmoke;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+   
+}
+
+#toggle-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    z-index: 3;
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    font-size: 25px;
+
+    
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#close-btn {
+    display: none;
+    
+    
+}
+
+#icon {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    z-index: 2;
+
+}
+
+#sidebar {
+    position: fixed;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f9ffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 999;
+    
+   
+    
+}
+
+#sidebar a {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#content {
+    margin-left: 250px;
+    transition: margin-left 0.5s;
+}
+
+#sidebar #close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* ... previous styles ... */
+
+@media screen and (max-width: 1000px) {
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px;
+        font-size:20px;
+    }
+    #toggle-btn {
+        display: block;
+    }
+
+    #sidebar {
+        width: 0;
+        left: -250px;
+    }
+
+    #icon {
+        position: fixed;
+        top: 8px;
+        display: block;
+    }
+
+    #sidebar.show {
+        width: 250px;
+        left: 0;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    #toggle-btn {
+        display: block;
+        position: relative;
+        top: 10%;
+        left: 10px;
+        margin-right: 15px;
+        font-size: xx-small;
+    }
+    #sidebar #close-btn {
+        z-index: 3;
+    }
+    
+
+   
+}
+
+@media screen and (max-width: 600px) {
+    #icon {
+        display: block;
+        position: relative;
+        left: 0px;
+        top: 16px;
+        margin-right: 1px;
+        font-size: small;
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+
+    .links {
+        position: relative;
+        top: -10%;
+        margin-left: 40px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size:xx-small;
+    }
+
+
+    #sidebar {
+        width: 0;
+
+    }
+
+    #sidebar.show {
+        width: 250px;
+    }
+
+    #content {
+        margin-left: 0px;
+        overflow-x: hidden;
+    }
+}

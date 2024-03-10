@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Wheel Color Picker  Example </title>
+     
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="./css/picker.css">
+      <link rel="stylesheet" href="./css/sidebar.css">
+      
+      <style>
+        .container {
+          max-width: 650px;
+          box-shadow: border-box;
+          margin: 10px auto;
+        }
+        .col{
+           overflow: auto;
+        }
+        .row{
+          width: 325px;
+          float: left;
+        }
+        #preview{
+          border: 1px solid #ddd;
+          width: 285px;
+          height: 310px;
+        }
+        h3{
+          margin-bottom: 5px;
+        }
+      </style>
+      <!-- Demo CSS (No Need to include it into your project) -->
+      <link rel="stylesheet" href="./css/demo.min.css">
+   </head>
+   <body>
+      <nav id="nav">
+         <div class="links">
+             <a href="#Gc.html">Home</a>
+             <a href="#about">About</a>
+             <a href="#contact">Contact</a>
+             <a href="#services">Services</a>
+ 
+ 
+         </div>
+     </nav>
+ 
+     <div id="icon" onclick="toggleNav()">&#9776;</div>
+ 
+     <div id="sidebar">
+         <br>
+         <br> 
+         <a href="Npalette.html">All About Palette</a>
+        <a href="Contrast.html">Contrast Checker</a>
+        <a href="GC.html">Generate Random Gradient</a>
+        <a href="picker.html">Color picker</a>
+        <a href="gredient_p.html">Browse Gradient</a>
+        <a href="Genrate_gredient.html">Generate Gradient</a>
+         <!-- Add more links as needed -->
+     </div>
+      <div id="content">
+      <header class="page_header"> 
+         <div class="project_intro">
+            <h1> Color Wheel   </h1>
+            <p class="project_description">color Picker </p>
+         </div>
+      </header>
+      <main>
+         <!-- Project Code Start -->
+         <div class="container">
+           <div class="col">
+             <div class="row">
+         <div id="picker"></div>
+              </div>
+              <div class="row">
+               <h3> Color Preview </h3>
+         <div id="preview"></div>
+              </div>
+         </div>
+         </div>
+         </div>
+         <!--Wheel Color Picker  Script JS -->
+         <script type="text/javascript" src="./js/picker.js"></script>
+        <script src="./js/sidebar.js"></script>
+         <!-- Project Code End -->
+      </main>
+      <footer class="credit"> Author: Solaiman Kmail - Distributed by: <a href="https://www.codehim.com/?source=demo"> CodeHim </a></footer>
+  
+   </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/GC.css">
+   
+
+
+
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="links">
+            <a href="#Gc.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#services">Services</a>
+
+
+        </div>
+    </nav>
+
+    <div id="icon" onclick="toggleNav()">&#9776;</div>
+
+    <div id="sidebar">
+        <br>
+        <br> 
+        <a href="Npalette.html">All About Palette</a>
+        <a href="Contrast.html">Contrast Checker</a>
+        <a href="picker.html">Color picker</a>
+        <a href="gredient_p.html">Browse Gradient</a>
+        <a href="Genrate_gredient.html">Generate Gradient</a>
+        
+        <!-- Add more links as needed -->
+    </div>
+
+    <div id="content">
+        <div class="container1">
+
+            <h1><span>Background </span>: linear-gradient (45deg, #<span id="hex1">000000</span> ,#<span
+                    id="hex2">000000</span> )
+            </h1>
+            <h2>Colour! what a deep and mysterious language ,the language of dreams</h2>
+
+            <div class="button"> 
+            <button id="Generate">Generate</button>
+            <button id="copy" >copy</button></div>
+        </div>
+
+
+
+
+        <div class="container">
+
+            <div class="color_wrapper" id="color">
+                <ul>
+                    <li>
+                        <div class="color_box">
+                            <div class="color_value">#eda004</div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+            <!--- <button type="button" id="btnEl">Generate palate</button>--->
+
+
+
+        </div>
+    </div>
+
+    <script src="./js/GC.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <!-- Include chroma.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+
+</body>
+
+</html>

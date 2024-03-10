@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> generate Gredient</title>
+  <link rel="stylesheet" href="css/gredient_gen.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="links">
+      <a href="#Gc.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#services">Services</a>
+    </div>
+  </nav>
+
+  <div id="icon" onclick="toggleNav()">&#9776;</div>
+
+  <div id="sidebar">
+    <button id="close-btn" onclick="toggleNav()">&times</button>
+    <br>
+    <br>
+    <a href="Npalette.html">All About Palette</a>
+    <a href="Contrast.html">Contrast Checker</a>
+    <a href="GC.html">Generate Random Gradient</a>
+    <a href="picker.html">Color picker</a>
+    <a href="Genrate_gredient.html">Generate Gradient</a>
+  </div>
+  <div id="content">
+    <div class="container">
+      <div class="container1">
+        <div class="gradient-preview" id="gradientPreview"></div>
+      </div>
+
+      <div class="container2">
+       
+
+          <div class="sub-container">
+            <div class="line">hello</div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+
+       
+        <input type="color" class="color-picker" value="#ff0000">
+        <input type="color" class="color-picker" value="#00ff00">
+        <button class="btn" onclick="generateGradient()">Generate Gradient</button>
+        <button class="btn" onclick="exportGradient()">Export Gradient</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <script src="js/sidebar.js"></script>
+  <script src="js/gredient_gen.js"></script>
+</body>
+
+</html>

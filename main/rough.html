@@ -1,0 +1,376 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/animation.css">
+  <title>Gradient Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      position: relative; /* Add relative positioning to .container */
+    }
+
+    .container1,
+    .container2 {
+      height: 80vh;
+      width: 50%;
+      background-color: antiquewhite;
+      border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* Add relative positioning to .container1 and .container2 */
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column; /* Set flex direction to column */
+      justify-content: center;
+      align-items: center;
+    }
+    .picker{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .color-picker {
+      margin-bottom: 5px; /* Add margin between color picker inputs */
+      background-color: transparent; /* Set background color to transparent */
+      border: none; /* Remove border */
+      height: 100px;
+      width:100px;
+
+    }
+    .picker{
+      .picker {
+  display: flex; /* Set display to flex */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Align items horizontally at the center */
+}
+
+    }
+    .gradient-preview {
+      width: 90%;
+      height: 90%;
+      border-radius: 8px;
+      border: 10px solid white;
+      background-image: linear-gradient(45deg, red, green);
+    }
+
+    .sub-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .line {
+      position: absolute;
+      width: 10%;
+      height: 2px;
+      background-color: #333;
+      transform: scaleX(0);
+      animation: lineAnimation 5s infinite; /* Change animation to infinite 5s */
+    }
+
+    .line:nth-of-type(1) {
+      top: 20%;
+    }
+
+    .line:nth-of-type(2) {
+      top: 30%;
+    }
+
+    .line:nth-of-type(3) {
+      top: 40%;
+    }
+
+    .container2 .sub-container { /* Adjusting for container2 only */
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .button .btn {
+      background-color: transparent; /* Set background color to transparent */
+      border: none; /* Remove border */
+      font-size: 24px; /* Increase font size for better visibility */
+      cursor: pointer; /* Set cursor to pointer */
+    }
+
+    @keyframes lineAnimation {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container1">
+      <div class="gradient-preview" id="gradientPreview"></div>
+    </div>
+
+    <div class="container2">
+      <div class="sub-container">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="button">
+        <div id="colorPickers" class="picker">
+          <input type="color" class="color-picker" value="#ff0000">
+          <input type="color" class="color-picker" value="#00ff00">
+        </div>
+        <button class="btn" onclick="addColorPicker()">+</button>
+        <div>
+          <button class="btn" onclick="generateGradient()">Generate Gradient</button>
+          <button class="btn" onclick="exportGradient()">Export Gradient</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function generateGradient() {
+      const colors = document.querySelectorAll('.color-picker');
+      const gradientColors = Array.from(colors).map(color => color.value);
+      const gradientDirection = 'to right';
+
+      const gradient = `linear-gradient(${gradientDirection}, ${gradientColors.join(', ')})`;
+
+      const gradientPreview = document.getElementById('gradientPreview');
+      gradientPreview.style.background = gradient;
+    }
+
+    function exportGradient() {
+      const gradientPreview = document.getElementById('gradientPreview');
+      const gradient = gradientPreview.style.background;
+
+      navigator.clipboard.writeText(gradient).then(() => {
+        alert('Gradient copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy gradient: ', err);
+        alert('Failed to copy gradient. Please try again.');
+      });
+    }
+
+    function addColorPicker() {
+      const colorPickers = document.getElementById('colorPickers');
+      if (colorPickers.children.length < 7) { // Limit to 7 color pickers
+        const newColorPicker = document.createElement('input');
+        newColorPicker.type = 'color';
+        newColorPicker.value = '#FFFFFF';
+        newColorPicker.classList.add('color-picker');
+        colorPickers.appendChild(newColorPicker);
+      } else {
+        alert('You have reached the maximum limit of color pickers.');
+      }
+    }
+  </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/animation.css">
+  <title>Gradient Generator</title>
+  <link rel="stylesheet" href="rough.css">
+  <link rel="stylesheet" href="media.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="container1">
+      <div class="gradient-preview" id="gradientPreview"></div>
+    </div>
+
+    <div class="container2">
+      <div class="sub-container">
+        <div id="colorPickers" class="picker">
+          <input type="color" class="color-picker" value="#ff0000">
+          <input type="color" class="color-picker" value="#00ff00">
+          <button class="plus" onclick="addColorPicker()">+</button>
+        </div>
+
+        <div class="progress-container">
+          <input type="range" id="progressInput" class="progress-bar" min="0" max="100" value="50"
+            onchange="updateGradient()">
+        </div>
+        <div class="progress-bar" id="progressBar">
+
+        </div>
+
+        <div class="adjust">
+          <div class="angle-control" id="angleControl">
+            <div class="angle-line"></div>
+            <div class="angle-hand" id="angleHand"></div>
+          </div>
+        </div>
+        <div class="button2">
+          <button class="btn" onclick="generateGradient()">Generate Gradient</button>
+          <button class="btn" onclick="exportGradient()">Export Gradient</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- <script>
+    function generateGradient() {
+      const colors = document.querySelectorAll('.color-picker');
+      const gradientColors = Array.from(colors).map(color => color.value);
+      const gradientDirection = 'to right';
+
+      const gradient = `linear-gradient(${gradientDirection}, ${gradientColors.join(', ')})`;
+
+      const gradientPreview = document.getElementById('gradientPreview');
+      gradientPreview.style.background = gradient;
+    }
+
+    function exportGradient() {
+      const gradientPreview = document.getElementById('gradientPreview');
+      const gradient = gradientPreview.style.background;
+
+      navigator.clipboard.writeText(gradient).then(() => {
+        alert('Gradient copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy gradient: ', err);
+        alert('Failed to copy gradient. Please try again.');
+      });
+    }
+
+    function addColorPicker() {
+      const colorPickers = document.getElementById('colorPickers');
+      if (colorPickers.children.length < 8) { // Limit to 7 color pickers
+        const newColorPickerContainer = document.createElement('div');
+        newColorPickerContainer.classList.add('color-picker-container');
+
+        const newColorPicker = document.createElement('input');
+        newColorPicker.type = 'color';
+        newColorPicker.value = '#FFFFFF';
+        newColorPicker.classList.add('color-picker');
+
+        newColorPickerContainer.appendChild(newColorPicker);
+
+        // Find the "+" button
+        const plusButton = colorPickers.querySelector('.plus');
+
+        // Insert the new color picker before the "+" button
+        colorPickers.insertBefore(newColorPickerContainer, plusButton);
+      } else {
+        alert('You have reached the maximum limit of color pickers.');
+      }
+    }
+  </script>-->
+
+  <script>
+    // Function to generate gradient with precision
+    function generateGradient() {
+      const colors = document.querySelectorAll('.color-picker');
+      const gradientColors = Array.from(colors).map(color => color.value);
+      const gradientDirection = 'to right';
+
+      const gradient = `linear-gradient(${gradientDirection}, ${gradientColors.join(', ')})`;
+
+      const gradientPreview = document.getElementById('gradientPreview');
+      gradientPreview.style.background = gradient;
+    }
+
+    // Function to export gradient to clipboard
+    function exportGradient() {
+      const gradientPreview = document.getElementById('gradientPreview');
+      const gradient = gradientPreview.style.background;
+
+      navigator.clipboard.writeText(gradient).then(() => {
+        alert('Gradient copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy gradient: ', err);
+        alert('Failed to copy gradient. Please try again.');
+      });
+    }
+
+    // Function to add a new color picker input
+    function addColorPicker() {
+      const colorPickers = document.getElementById('colorPickers');
+      if (colorPickers.children.length < 8) { // Limit to 7 color pickers
+        const newColorPickerContainer = document.createElement('div');
+        newColorPickerContainer.classList.add('color-picker-container');
+
+        const newColorPicker = document.createElement('input');
+        newColorPicker.type = 'color';
+        newColorPicker.value = '#FFFFFF';
+        newColorPicker.classList.add('color-picker');
+
+        newColorPickerContainer.appendChild(newColorPicker);
+
+        // Find the "+" button
+        const plusButton = colorPickers.querySelector('.plus');
+
+        // Insert the new color picker before the "+" button
+        colorPickers.insertBefore(newColorPickerContainer, plusButton);
+      } else {
+        alert('You have reached the maximum limit of color pickers.');
+      }
+    }
+
+    // Function to update the gradient based on progress bar value
+    function updateGradient() {
+      const progress = document.getElementById('progressInput').value;
+      generateGradient(progress);
+    }
+
+    // Function to calculate gradient stops based on progress
+    function calculateGradientStops(progress) {
+      // Assuming linear progression for simplicity
+      const numStops = 2; // Number of color stops
+      const stopIncrement = 100 / (numStops - 1);
+
+      const stops = [];
+      for (let i = 0; i < numStops; i++) {
+        stops.push(i * stopIncrement);
+      }
+
+      // Adjust stops based on progress
+      const adjustedStops = stops.map(stop => stop * (progress / 100));
+
+      return adjustedStops;
+    }
+
+    // Initialize gradient with default progress value
+    updateGradient();
+
+  </script>
+
+</body>
+
+</html>
